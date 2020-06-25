@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <math.h>
+
 #define PI 3.141592
 int main(){
     char shape;
@@ -10,7 +10,7 @@ int main(){
         case 't':
             printf("Enter the base of the traingle: ");
             scanf("%d",&base);
-            printf("Enter the height of the traingle:");
+            printf("Enter the height of the traingle: ");
             scanf("%d",&height);
             area = base*height/2;
             printf("The area of the triangle is %d.\n",area);
@@ -30,7 +30,7 @@ int main(){
             printf("The area of the rectangle is %d.\n",area);
             break;
         case 'c':
-            printf("Enter the raduis of the circle:");
+            printf("Enter the raduis of the circle: ");
             scanf("%d",&raduis);
             float area = raduis*raduis * PI;
             printf("The area of the circle is %.2f.\n",area); 
