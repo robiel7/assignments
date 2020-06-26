@@ -11,7 +11,7 @@ int main(){
         }
         if(number < 0) {
             printf("%d is not a positive integer\n",number);
-            continue;
+            return 0;
         }
     }while (number < 0);
 
@@ -21,5 +21,5 @@ int main(){
              return 0;
         }
     }
-    printf("%d PRIMES\n",number);
+    printf("%d PRIME\n",number);
 }
