@@ -19,7 +19,7 @@ int main(){
         }
         if(number < 0) {
             printf("%d is not a positive integer\n",number);
-            continue;
+            return 0;
         }
     }while (number < 0);
     print_prime(number);
@@ -87,7 +87,7 @@ void print_prime(int number){
         prime_factor(number,divides);
         print_largest_factor(number,divides);
     }else{
-        printf("PRIMES\n");
+        printf("PRIME\n");
     }      
 }
 
