@@ -19,7 +19,7 @@ void take_input(char *temp,char t){
     
     int lower,higher,step,i;
     char t2 ;
-    if(t != 'F') t2 = 'F';else t2 = 'C';
+    t2 = t != 'F'?'F':'C';
     
     printf("Enter the lower %s temperature: ",temp);
     scanf("%d",&lower);
