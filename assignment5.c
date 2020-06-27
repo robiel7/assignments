@@ -18,8 +18,6 @@ int main(){
 void take_input(char *temp,char t){
     
     int lower,higher,step,i;
-    char t2 ;
-    t2 = t != 'F'?'F':'C';
     
     printf("Enter the lower %s temperature: ",temp);
     scanf("%d",&lower);
@@ -34,7 +32,7 @@ void take_input(char *temp,char t){
     }
 
     for ( i = lower; i <= higher; i= i+step){
-        printf("%d%c = %.2f%c\n",i, t, convert_temperature(temp,i),t2);
+        printf("%d%c = %.2f%c\n",i, t, convert_temperature(temp,i),t != 'F'?'F':'C');
     }
 }
 float convert_temperature(char* temp,int i){
