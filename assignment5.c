@@ -36,5 +36,5 @@ void take_input(char *temp,char t){
     }
 }
 float convert_temperature(char* temp,int i){
-    return strcmp(temp,"Fahrenheit") == 0 ? ((i -32.0)*5/9):((i*9.0/5)+32);
+    return strcmp(temp,"Fahrenheit")? ((i*9.0/5)+32):((i -32.0)*5/9);
 }
