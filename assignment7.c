@@ -2,6 +2,7 @@
 #include <string.h>
 #include <ctype.h>
 
+char* to_lower(char*);
 int is_palindrome(char*);
 void print_palindrome(char*);
 
@@ -20,17 +21,26 @@ int main(){
     do{
         printf("Would you like to see if the phrase is palindrome? ");
         scanf("%s",conformation);
+        to_lower(conformation);
 
-        while(conformation[i]) {
-            conformation[i] = toupper(conformation[i]);
-            i++;
-        }
+        if(!strcmp("no",conformation)){
+        return 0;
+    }
 
-    }while(strcmp(conformation,"YES"));
-    print_palindrome(palindrome);
+    }while(strcmp(conformation,"yes"));
     
-
+    print_palindrome(to_lower(palindrome));
+    
     return 0;
+}
+
+char* to_lower(char* ch){
+    int i;
+    while(ch[i]) {
+        ch[i] = tolower(ch[i]);
+        i++;
+    }
+    return ch;
 }
 
 int is_palindrome(char* palindrome){
