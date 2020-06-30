@@ -9,7 +9,6 @@ void print_palindrome(char*);
 int main(){
     
     char palindrome[20],conformation[4];
-    int i;
     //take input
     printf("Enter a world or phase (or \\q to quit) : ");
     scanf("%s",palindrome);
