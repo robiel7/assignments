@@ -110,14 +110,14 @@ void printScores(char students[20][50],float score[20][10],int student,int assig
   for (i = 0; i < student; i++){
     fprintf(file,"%s",students[i]);
     for (j = 0; j < assignment; j++){
-      fprintf(file,"\t%.0f\t",score[i][j]);
+      fprintf(file,"\t%.0f",score[i][j]);
     }
     average_student[i] = getAverageForStudent(score, i, assignment);
     fprintf(file,"\t%.2f",getAverageForStudent(score, i, assignment));
     fprintf(file,"\n");
   }
   fprintf(file,"\n");
-  fprintf(file,"Avg ");
+  fprintf(file,"Avg");
   for ( i = 0; i < assignment; i++){
     totalAssignment += getAverageForAssignment(score, student, i);
     fprintf(file,"\t%.2f",getAverageForAssignment(score, student, i));
@@ -126,7 +126,7 @@ void printScores(char students[20][50],float score[20][10],int student,int assig
   fprintf(file,"\t%.2f",avgAssignment);
   fprintf(file,"\n");
 
-  fprintf(file,"stdD");
+   fprintf(file,"stdD");
   for ( i = 0; i < assignment; i++){
     fprintf(file,"\t%.2f",getStandardDeviationForAssignment(score, student, i));
   }
