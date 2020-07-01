@@ -6,6 +6,7 @@ float getAverageForAssignment(float[20][10], int, int);
 float getStandardDeviationForAssignment(float[20][10], int, int);
 float getStandardDeviationForAverage(float[20], int);
 void printScores(char[20][50],float[20][10], int, int);
+FILE *file;
 
 int main(){
   int student,assignment,i,j;
@@ -31,6 +32,7 @@ int main(){
     printf("\n");
   }
   printf("\n");
+  file = fopen("resultat.txt","a");
   printScores(students,score, student, assignment);
   
   return 0;
@@ -99,36 +101,36 @@ void printScores(char students[20][50],float score[20][10],int student,int assig
   float totalAssignment = 0, avgAssignment,stdD;
   float average_student[20];
 
-  printf("Name\t");
+  fprintf(file,"Name\t");
   for ( i = 0; i < assignment; i++){
-    printf("Assn%d\t",i+1);
+    fprintf(file,"Assn%d\t",i+1);
   }
-  printf("Average\n");
+  fprintf(file,"Average\n");
 
   for (i = 0; i < student; i++){
-    printf("%s",students[i]);
+    fprintf(file,"%s",students[i]);
     for (j = 0; j < assignment; j++){
-      printf("\t%.0f",score[i][j]);
+      fprintf(file,"\t%.0f",score[i][j]);
     }
     average_student[i] = getAverageForStudent(score, i, assignment);
-    printf("\t%.2f",getAverageForStudent(score, i, assignment));
-    printf("\n");
+    fprintf(file,"\t%.2f",getAverageForStudent(score, i, assignment));
+    fprintf(file,"\n");
   }
-  printf("\n");
-  printf("Avg");
+  fprintf(file,"\n");
+  fprintf(file,"Avg");
   for ( i = 0; i < assignment; i++){
     totalAssignment += getAverageForAssignment(score, student, i);
-    printf("\t%.2f",getAverageForAssignment(score, student, i));
+    fprintf(file,"\t%.2f",getAverageForAssignment(score, student, i));
   }
   avgAssignment = totalAssignment / assignment;
-  printf("\t%.2f",avgAssignment);
-  printf("\n");
+  fprintf(file,"\t%.2f",avgAssignment);
+  fprintf(file,"\n");
 
-   printf("stdD");
+   fprintf(file,"stdD");
   for ( i = 0; i < assignment; i++){
-    printf("\t%.2f",getStandardDeviationForAssignment(score, student, i));
+    fprintf(file,"\t%.2f",getStandardDeviationForAssignment(score, student, i));
   }
   stdD = getStandardDeviationForAverage(average_student, student);
-  printf("\t%.2f\n",stdD);
+  fprintf(file,"\t%.2f\n\n\n",stdD);
   
 }
