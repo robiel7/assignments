@@ -1,3 +1,4 @@
+#a single c.file makefile   
 CC=clang
 CFLAGS=-Wall -O
 LDFLAGS=
@@ -7,5 +8,6 @@ SRC=$(wildcard *.c)
 all: $(EXEC)
 
 myapp: $(SRC)
-			$(CC) -o $@ $^ $(LDFLAGS)
+			$(CC) -o $@ $^ $(LDFLAGS) 
+			
 

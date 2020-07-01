@@ -11,6 +11,7 @@ int main(){
   int student,assignment,i,j;
   char students[20][50];
   float score[20][10];
+  FILE *file;
   do{
     printf("How many students are there (between 1 and 20)? ");
     scanf("%d",&student);
@@ -30,9 +31,11 @@ int main(){
     }
     printf("\n");
   }
+  file = fopen("result.txt","a");
   printf("\n");
   printScores(students,score, student, assignment);
-  
+  fclose(file);
+
   return 0;
 }
 
