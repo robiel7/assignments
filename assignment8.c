@@ -1,3 +1,4 @@
+//blackjack
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
@@ -30,7 +31,8 @@ void print_deck (card deck[52]){
 
 int main(){
     card deck[52];
-    int i,j,k=0;
+    int i,j,k=0,players,decks;
+    char file[30];
     char *suit[4] = {"Hearts","Diamonds","Clubs", "Spades"};
     char *faces[13] = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack","Queen", "king"};
 
@@ -42,7 +44,17 @@ int main(){
         }
         
     }
-    print_deck(deck);
-    shuffle(deck);
-    print_deck(deck);
+    printf("What is the name of the output file? ");
+    scanf("%s",file);
+    do{
+        printf("How many players are at the table (between 1 and 6) : ");
+        scanf("%d",&players);
+    }while((players >=6)|| (players <=1));
+
+    do{
+        printf("How many decks are in the shoe (between 1 and 6) : ");
+        scanf("%d",&decks);
+    }while((decks >=6)|| (decks <=1));
+
+   
 }
