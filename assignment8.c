@@ -35,6 +35,7 @@ int main(){
     char file[30];
     char *suit[4] = {"Hearts","Diamonds","Clubs", "Spades"};
     char *faces[13] = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack","Queen", "king"};
+    FILE *fptr ;
 
     for ( i = 0; i < 4; i++){
         for ( j = 0; j < 13; j++){
@@ -55,6 +56,8 @@ int main(){
         printf("How many decks are in the shoe (between 1 and 6) : ");
         scanf("%d",&decks);
     }while((decks >=6)|| (decks <=1));
-
-   
+    
+    fptr = fopen(file,"a");
+    fprintf(fptr,"%d players and %d decks",players,decks);
+    fclose(fptr);
 }
